@@ -62,21 +62,22 @@ class ViewController: UIViewController {
 
     /// 表示している画像の番号
     var dispImageNo = 0
+    
+    let imageNameArray = [
+        "ミセス１",
+        "ミセス２",
+        "ミセス３",
+        "ミセス４",
+        "ミセス５",
+        "ミセス６",
+        "ミセス７",
+        "ミセス８",
+    ]
 
     /// 表示している画像の番号を元に画像を表示する
     func displayImage() {
 
-        // 画像の名前の配列
-        let imageNameArray = [
-            "ミセス１",
-            "ミセス２",
-            "ミセス３",
-            "ミセス４",
-            "ミセス５",
-            "ミセス６",
-            "ミセス７",
-            "ミセス８",
-        ]
+        
         
         // 範囲より下を指している場合、最後の画像を表示
         if dispImageNo < 0 {
@@ -114,7 +115,7 @@ class ViewController: UIViewController {
     var selectedImage : UIImage?
     
     @IBAction func onTapImage(_ sender: Any) {
-        selectedImage = UIImage(named: imageNameArray[])
+        selectedImage = UIImage(named: imageNameArray[dispImageNo])
         if selectedImage != nil
         {
         
@@ -124,7 +125,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!){
 
-        if (segue.identifier == "toSubViewController"){
+        if (segue.identifier == "result"){
 
             let resultVC: ResultViewController = (segue.destination as? ResultViewController)!
 

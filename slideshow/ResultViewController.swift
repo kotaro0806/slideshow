@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, UIScrollViewDelegate{
 
-    var selectedImg: UIImage!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView:
+    UIScrollView!
+    
+    var selectedImg: UIImage!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,15 @@ class ResultViewController: UIViewController {
        
         // Do any additional setup after loading the view.
     }
+    //override func viewDidAppear(_ animated: Bool) {
+        //scrollView.delegate = self
+        //scrollView.maximumZoomScale = 8.0
+        //scrollView.minimumZoomScale = 1.0}
+
+
+    //func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    //return imageView}
+
     
 
     /*
