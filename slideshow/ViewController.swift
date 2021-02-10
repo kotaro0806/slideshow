@@ -111,6 +111,32 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var selectedImage : UIImage?
+    
+    @IBAction func onTapImage(_ sender: Any) {
+        selectedImage = UIImage(named: imageNameArray[])
+        if selectedImage != nil
+        {
+        
+        performSegue(withIdentifier: "result", sender: nil)
+    }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!){
+
+        if (segue.identifier == "toSubViewController"){
+
+            let resultVC: ResultViewController = (segue.destination as? ResultViewController)!
+
+                resultVC.selectedImg = selectedImage
+
+        }
+
+    }
+    
+    @IBAction func unwind(_ segue:
+        UIStoryboardSegue) {
+    }
 
 }
 
