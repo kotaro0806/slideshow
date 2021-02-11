@@ -69,6 +69,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="NextButtan" destination="4Sb-jN-haL" id="0r7-b2-VZG"/>
+                        <outlet property="PreviewButton" destination="hhd-71-piy" id="4BG-aO-J0F"/>
                         <outlet property="imageView" destination="Hpe-6B-zhW" id="gc7-2Y-A9s"/>
                         <outlet property="startButton" destination="9vp-gy-04g" id="f0O-3m-2Zq"/>
                         <segue destination="iiA-Zx-K5N" kind="show" identifier="result" id="4of-0e-T0q"/>

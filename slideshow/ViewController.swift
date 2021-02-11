@@ -12,7 +12,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var startButton: UIButton!
-
+    @IBOutlet weak var NextButtan: UIButton!
+    @IBOutlet weak var PreviewButton: UIButton!
+    
+    
     @IBAction func onPrev(_ sender: Any) {
         // 表示している画像の番号を1減らす
         dispImageNo -= 1
@@ -38,7 +41,11 @@ class ViewController: UIViewController {
             // 再生時の処理を実装
 
             // タイマーをセットする
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onNext), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onNext), userInfo: nil, repeats: true)
+            
+            NextButtan.isEnabled=false
+            
+            PreviewButton.isEnabled=false
 
             // ボタンの名前を停止に変える
             startButton.setTitle("停止", for: .normal)
@@ -50,6 +57,11 @@ class ViewController: UIViewController {
 
             // タイマーを削除しておく(timer.invalidateだけだとtimerがnilにならないため)
             timer = nil
+            
+            NextButtan.isEnabled=true
+            
+            PreviewButton.isEnabled=true
+
 
             // ボタンの名前を再生に直しておく
             startButton.setTitle("再生", for: .normal)
