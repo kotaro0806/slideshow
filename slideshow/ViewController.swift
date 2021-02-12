@@ -133,6 +133,8 @@ class ViewController: UIViewController {
         
         performSegue(withIdentifier: "result", sender: nil)
     }
+        timer.invalidate()
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!){
