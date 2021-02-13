@@ -133,7 +133,20 @@ class ViewController: UIViewController {
         
         performSegue(withIdentifier: "result", sender: nil)
     }
-        timer.invalidate()
+        if timer==nil{
+            
+        }else{
+            timer.invalidate()
+            timer = nil
+            
+            NextButtan.isEnabled=true
+            
+            PreviewButton.isEnabled=true
+
+
+            // ボタンの名前を再生に直しておく
+            startButton.setTitle("再生", for: .normal)
+        }
 
     }
     
